@@ -20,5 +20,3 @@ Auth::routes();
 Route::group(['prefix' => 'phonebook', 'namespace' => 'Phonebook', 'middleware' => ['auth'] ], function () {
     Route::resource('/contacts', 'ContactController');
 });
-
-Route::get('/home', 'HomeController@index')->name('home');
