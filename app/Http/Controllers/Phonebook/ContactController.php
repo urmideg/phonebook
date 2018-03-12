@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Phonebook;
 
 use App\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
@@ -15,7 +16,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('phonebook.contacts.index', [
+          'contacts'=> Contact::where('user_id', Auth::id())->orderBy('name')->paginate(8)
+        ]);
     }
 
     /**
