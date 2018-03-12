@@ -28,7 +28,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('phonebook.contacts.create');
     }
 
     /**
@@ -39,7 +39,8 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Contact::create($request->all());
+        return redirect()->route('contacts.index');
     }
 
     /**

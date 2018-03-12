@@ -13,7 +13,7 @@
           <th>Notice</th>
           <th class="text-right">
 
-            <a class="btn btn-success btn-sm" href="#">
+            <a class="btn btn-success btn-sm" href="{{ route('contacts.create') }}">
               Create
             </a>
 
