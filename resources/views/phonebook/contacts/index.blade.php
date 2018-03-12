@@ -28,13 +28,20 @@
             <td>{{ $contact->notice }}</td>
             <td class="text-right">
 
+              <form onsubmit="if(confirm('Удалить?')){ return true }else{ return false }" action="{{ route('contacts.destroy', $contact) }}" method="post">
+
+                {{ method_field('delete') }}
+                {{ csrf_field() }}
+
                 <a class="btn btn-primary btn-sm" href="{{ route('contacts.edit', $contact->id) }}">
                   Edit
                 </a>
 
-                <a class="btn btn-danger btn-sm" href="#">
+                <button type="submit" class="btn btn-danger btn-sm">
                   Delete
-                </a>
+                </button>
+
+              </form>
 
             </td>
           </tr>
