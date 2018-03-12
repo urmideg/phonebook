@@ -1,13 +1,13 @@
 <label for="name">Name</label>
-<input type="text" class="form-control" name="name" id="name" required>
+<input type="text" class="form-control" name="name" id="name" value="{{$contact->name or ""}}" required>
 
 <label for="phone">Phone</label>
-<input class="form-control" type="text" name="phone" id="phone">
+<input class="form-control" type="text" name="phone" id="phone" value="{{$contact->phone or ""}}">
 
 <label for="notice">Notice</label>
-<input class="form-control" type="text" name="notice" id="notice">
+<input class="form-control" type="text" name="notice" id="notice" value="{{$contact->notice or ""}}">
 
-<input type="hidden" name="user_id">
+<input type="hidden" name="user_id" value="{{$contact->user_id or ""}}">
 
 <hr />
 

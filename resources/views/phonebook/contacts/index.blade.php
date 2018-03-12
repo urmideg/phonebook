@@ -28,7 +28,7 @@
             <td>{{ $contact->notice }}</td>
             <td class="text-right">
 
-                <a class="btn btn-primary btn-sm" href="#">
+                <a class="btn btn-primary btn-sm" href="{{ route('contacts.edit', $contact->id) }}">
                   Edit
                 </a>
 

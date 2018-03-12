@@ -62,7 +62,9 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('phonebook.contacts.edit', [
+          'contact' => $contact
+        ]);
     }
 
     /**
@@ -74,7 +76,8 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $contact->update($request->except('user_id'));
+        return redirect()->route('contacts.index');
     }
 
     /**
